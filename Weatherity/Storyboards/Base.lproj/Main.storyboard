@@ -1,0 +1,214 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="0c7-rP-M3d">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
+        <capability name="Image references" minToolsVersion="12.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="NunitoSans-Black.ttf">
+            <string>NunitoSans-Black</string>
+        </array>
+        <array key="NunitoSans-Regular.ttf">
+            <string>NunitoSans-Regular</string>
+        </array>
+    </customFonts>
+    <scenes>
+        <!--Weatherity-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController storyboardIdentifier="DailyWeatherViewController" id="BYZ-38-t0r" customClass="DailyWeatherViewController" customModule="Weatherity" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="Odq-F1-Rpj">
+                                <rect key="frame" x="0.0" y="88" width="414" height="808"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </tableView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="Odq-F1-Rpj" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="Fer-xv-xlV"/>
+                            <constraint firstItem="Odq-F1-Rpj" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="One-DC-hFp"/>
+                            <constraint firstAttribute="bottom" secondItem="Odq-F1-Rpj" secondAttribute="bottom" id="PBx-jq-ItO"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Odq-F1-Rpj" secondAttribute="trailing" id="z8m-ge-uuE"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Weatherity" id="leU-Xj-eQl">
+                        <barButtonItem key="rightBarButtonItem" id="YHe-EV-iAV">
+                            <imageReference key="image" image="circle.grid.hex.fill" catalog="system" symbolScale="medium" renderingMode="original"/>
+                            <imageReference key="landscapeImage" image="circle.grid.hex.fill" catalog="system" symbolScale="medium" renderingMode="original"/>
+                            <connections>
+                                <action selector="btnSettingsAction:" destination="BYZ-38-t0r" id="DYh-Vd-4Og"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+                    <connections>
+                        <outlet property="tableViewWeatherList" destination="Odq-F1-Rpj" id="CPp-Ze-HZf"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="627.536231884058" y="99.776785714285708"/>
+        </scene>
+        <!--Settings Table View Controller-->
+        <scene sceneID="OXA-5D-4ds">
+            <objects>
+                <tableViewController storyboardIdentifier="SettingsTableViewController" id="19v-SH-wnV" customClass="SettingsTableViewController" customModule="Weatherity" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="insetGrouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" estimatedSectionHeaderHeight="-1" sectionFooterHeight="18" estimatedSectionFooterHeight="-1" id="h5n-ia-9ID">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <sections>
+                            <tableViewSection id="vS6-5i-hoq">
+                                <cells>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" id="euu-10-vIf">
+                                        <rect key="frame" x="20" y="18" width="374" height="56.5"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="euu-10-vIf" id="rAx-jx-JcS">
+                                            <rect key="frame" x="0.0" y="0.0" width="374" height="56.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Settings" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xcj-L5-gSQ">
+                                                    <rect key="frame" x="64" y="16" width="294" height="24.5"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="24" id="0xv-4e-PiE"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" name="NunitoSans-Black" family="Nunito Sans" pointSize="16"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zGX-DJ-4Sc">
+                                                    <rect key="frame" x="16" y="12.5" width="32" height="32"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="32" id="N6V-LR-8bg"/>
+                                                        <constraint firstAttribute="width" secondItem="zGX-DJ-4Sc" secondAttribute="height" multiplier="1:1" id="i99-d6-97H"/>
+                                                    </constraints>
+                                                    <state key="normal" title="Button"/>
+                                                    <buttonConfiguration key="configuration" style="plain" title=" ">
+                                                        <imageReference key="image" image="clear.fill" catalog="system" symbolScale="large" renderingMode="hierarchical">
+                                                            <hierarchicalColors>
+                                                                <color systemColor="labelColor"/>
+                                                                <color systemColor="secondaryLabelColor"/>
+                                                                <color systemColor="tertiaryLabelColor"/>
+                                                            </hierarchicalColors>
+                                                        </imageReference>
+                                                        <fontDescription key="titleFontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="1"/>
+                                                    </buttonConfiguration>
+                                                    <connections>
+                                                        <action selector="btnCloseAction:" destination="19v-SH-wnV" eventType="touchUpInside" id="M43-o7-a33"/>
+                                                    </connections>
+                                                </button>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="xcj-L5-gSQ" firstAttribute="leading" secondItem="zGX-DJ-4Sc" secondAttribute="trailing" constant="16" id="2HY-c8-cxt"/>
+                                                <constraint firstItem="zGX-DJ-4Sc" firstAttribute="centerY" secondItem="rAx-jx-JcS" secondAttribute="centerY" id="3y1-XC-5s3"/>
+                                                <constraint firstAttribute="bottom" secondItem="xcj-L5-gSQ" secondAttribute="bottom" constant="16" id="8li-sE-9lW"/>
+                                                <constraint firstItem="xcj-L5-gSQ" firstAttribute="top" secondItem="rAx-jx-JcS" secondAttribute="top" constant="16" id="Lf7-u9-EtO"/>
+                                                <constraint firstAttribute="trailing" secondItem="xcj-L5-gSQ" secondAttribute="trailing" constant="16" id="OJT-YE-X92"/>
+                                                <constraint firstItem="zGX-DJ-4Sc" firstAttribute="leading" secondItem="rAx-jx-JcS" secondAttribute="leading" constant="16" id="j8p-YG-VIb"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
+                            <tableViewSection id="HES-B0-PZN">
+                                <cells>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" id="oeb-E5-ESw">
+                                        <rect key="frame" x="20" y="110.5" width="374" height="77.5"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="oeb-E5-ESw" id="JRq-oc-EqX">
+                                            <rect key="frame" x="0.0" y="0.0" width="374" height="77.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Temperature Units" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ekc-Y1-VKe">
+                                                    <rect key="frame" x="16" y="8" width="342" height="22"/>
+                                                    <fontDescription key="fontDescription" name="NunitoSans-Regular" family="Nunito Sans" pointSize="16"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="0mv-27-qca">
+                                                    <rect key="frame" x="16" y="38" width="342" height="32.5"/>
+                                                    <segments>
+                                                        <segment title="Celsius"/>
+                                                        <segment title="Fahrenheit"/>
+                                                    </segments>
+                                                    <connections>
+                                                        <action selector="segmentTempUnitsAction:" destination="19v-SH-wnV" eventType="valueChanged" id="5Ib-zc-sa7"/>
+                                                    </connections>
+                                                </segmentedControl>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="ekc-Y1-VKe" firstAttribute="leading" secondItem="JRq-oc-EqX" secondAttribute="leading" constant="16" id="PE8-EJ-HUJ"/>
+                                                <constraint firstAttribute="trailing" secondItem="ekc-Y1-VKe" secondAttribute="trailing" constant="16" id="RyL-gy-2KG"/>
+                                                <constraint firstItem="0mv-27-qca" firstAttribute="leading" secondItem="JRq-oc-EqX" secondAttribute="leading" constant="16" id="XvX-U8-f3x"/>
+                                                <constraint firstAttribute="trailing" secondItem="0mv-27-qca" secondAttribute="trailing" constant="16" id="gQ1-35-Vgf"/>
+                                                <constraint firstItem="0mv-27-qca" firstAttribute="top" secondItem="ekc-Y1-VKe" secondAttribute="bottom" constant="8" id="jeV-08-fhQ"/>
+                                                <constraint firstAttribute="bottom" secondItem="0mv-27-qca" secondAttribute="bottom" constant="8" id="n3c-Uh-n6d"/>
+                                                <constraint firstItem="ekc-Y1-VKe" firstAttribute="top" secondItem="JRq-oc-EqX" secondAttribute="top" constant="8" id="pHj-mQ-Ybk"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
+                        </sections>
+                        <connections>
+                            <outlet property="dataSource" destination="19v-SH-wnV" id="YGY-do-81H"/>
+                            <outlet property="delegate" destination="19v-SH-wnV" id="HQ7-2O-Pfx"/>
+                        </connections>
+                    </tableView>
+                    <toolbarItems/>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="segmentTempUnits" destination="0mv-27-qca" id="cof-by-CJL"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="VQH-uS-S80" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1348" y="100"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="FSP-tF-n8O">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="0c7-rP-M3d" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" largeTitles="YES" id="1Hi-s7-xOk">
+                        <rect key="frame" x="0.0" y="44" width="414" height="96"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <textAttributes key="titleTextAttributes">
+                            <fontDescription key="fontDescription" name="NunitoSans-Black" family="Nunito Sans" pointSize="16"/>
+                        </textAttributes>
+                        <textAttributes key="largeTitleTextAttributes">
+                            <fontDescription key="fontDescription" name="NunitoSans-Black" family="Nunito Sans" pointSize="32"/>
+                        </textAttributes>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="3LM-7J-ZPs"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="5Kk-64-xEO" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-117.39130434782609" y="99.776785714285708"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="circle.grid.hex.fill" catalog="system" width="128" height="112"/>
+        <image name="clear.fill" catalog="system" width="128" height="114"/>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="secondaryLabelColor">
+            <color red="0.23529411764705882" green="0.23529411764705882" blue="0.2627450980392157" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="tertiaryLabelColor">
+            <color red="0.23529411764705882" green="0.23529411764705882" blue="0.2627450980392157" alpha="0.29999999999999999" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>
