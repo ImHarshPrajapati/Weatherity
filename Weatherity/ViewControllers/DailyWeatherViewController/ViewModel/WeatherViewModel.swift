@@ -37,14 +37,19 @@ class WeatherViewModel {
         strURL += "&exclude=current,minutely,hourly,alerts"
         strURL += "&units=metric"
         strURL += "&appid=50db011b65319c58accf44a48ab4ea58" ///Can be added in firebase config to secure or change in future
-
+    
         HPapiRequestWrapper.requestGETURL(strURL, dictHeader: nil, success: { responceData in
 
             if let data = responceData {
                 do {
                     self.weatherModel = try JSONDecoder().decode(WeatherModel.self, from: data)
-                    self.arrDailyWeather = self.weatherModel.dailyWeathers ?? []
-                    response(NetworkManager.statusCode.success, "")
+                    if let message = self.weatherModel.message {
+                        response(NetworkManager.statusCode.fail, message)
+                    }
+                    else {
+                        self.arrDailyWeather = self.weatherModel.dailyWeathers ?? []
+                        response(NetworkManager.statusCode.success, "")
+                    }
                     return
                 }
                 catch let error {

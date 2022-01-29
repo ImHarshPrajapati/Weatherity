@@ -52,6 +52,8 @@ class DailyWeatherViewController: UIViewController {
 
             default:
 //                self.popupAlert("", message, [ButtonTitles.Ok], [nil])
+                self.tableViewWeatherList.reloadData()
+                self.tableViewWeatherList.setEmptyMessage(message, self.weatherViewModel.arrDailyWeather?.count ?? 0)
                 break;
             }
         }

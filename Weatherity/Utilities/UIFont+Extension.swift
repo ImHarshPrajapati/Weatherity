@@ -20,5 +20,5 @@ enum FontNames: String {
 extension UIFont {
     
     //MARK: global fonts
-    static let nunitoSansBlack = UIFont(name: FontNames.NunitoSansBlack.rawValue, size: 12) ?? UIFont.systemFont(ofSize: 12)
+    static let nunitoSansBlack16 = UIFont(name: FontNames.NunitoSansBlack.rawValue, size: 16) ?? UIFont.systemFont(ofSize: 16)
 }
