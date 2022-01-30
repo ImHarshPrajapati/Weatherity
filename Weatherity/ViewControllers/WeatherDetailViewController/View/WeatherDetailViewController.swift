@@ -13,7 +13,15 @@ class WeatherDetailViewController: UIViewController {
     @IBOutlet weak var lblTimeZone: UILabel!
     @IBOutlet weak var lblDate: UILabel!
     
-    @IBOutlet weak var imgWeatherIcon: UIImageView!
+    @IBOutlet weak var imgWeatherIcon: UIImageView! {
+        didSet {
+            guard let image = self.imgWeatherIcon else { return }
+            image.cornerRadius = 4
+//            image.backgroundColor = UIColor.white
+//            image.setDropShadow(color: UIColor.lightGray, opacity: 0.40, offSet: CGSize(width: 0, height: 4), radius: 6)
+        }
+    }
+    
     @IBOutlet weak var lblWeather: UILabel!
     @IBOutlet weak var lblWeatherDesc: UILabel!
     
@@ -40,7 +48,7 @@ class WeatherDetailViewController: UIViewController {
     // MARK: Other Methods
     func initAndSetupView() {
         
-        lblTimeZone.text = weatherViewModel.weatherModel.timezone ?? "N/A"
+        self.lblTimeZone.text = weatherViewModel.weatherModel.timezone ?? "N/A"
         self.lblDate.text = (dailyWeather.dt ?? 0).toDate().toString(format: "EEE dd-MMM, yyyy")
         
         self.lblTempDay.text = StringBase.kDay + ": " + weatherViewModel.getCalculatedTemperature(dailyWeather.temp?.day ?? 0)

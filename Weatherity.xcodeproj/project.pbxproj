@@ -18,6 +18,7 @@
 		FA5755AD27A656C300734ACC /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA5755AC27A656C300734ACC /* UIView+Extension.swift */; };
 		FA5755B227A6599E00734ACC /* WeatherDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA5755B127A6599E00734ACC /* WeatherDetailViewController.swift */; };
 		FA5755B527A6B8BF00734ACC /* LocalNotificationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA5755B427A6B8BE00734ACC /* LocalNotificationManager.swift */; };
+		FA9044CA27A700A700CA845B /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA9044C927A700A700CA845B /* Constants.swift */; };
 		FAA35E0527A5964800C037A7 /* WeatherModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA35E0427A5964800C037A7 /* WeatherModel.swift */; };
 		FAA35E0727A597E800C037A7 /* WeatherViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA35E0627A597E800C037A7 /* WeatherViewModel.swift */; };
 		FAA35E0927A599B700C037A7 /* HPapiRequestWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA35E0827A599B700C037A7 /* HPapiRequestWrapper.swift */; };
@@ -74,6 +75,7 @@
 		FA5755AC27A656C300734ACC /* UIView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
 		FA5755B127A6599E00734ACC /* WeatherDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherDetailViewController.swift; sourceTree = "<group>"; };
 		FA5755B427A6B8BE00734ACC /* LocalNotificationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalNotificationManager.swift; sourceTree = "<group>"; };
+		FA9044C927A700A700CA845B /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		FAA35E0427A5964800C037A7 /* WeatherModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherModel.swift; sourceTree = "<group>"; };
 		FAA35E0627A597E800C037A7 /* WeatherViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherViewModel.swift; sourceTree = "<group>"; };
 		FAA35E0827A599B700C037A7 /* HPapiRequestWrapper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HPapiRequestWrapper.swift; sourceTree = "<group>"; };
@@ -295,6 +297,7 @@
 				FA57559C27A5C4C800734ACC /* UserDefaults.swift */,
 				FA5755AC27A656C300734ACC /* UIView+Extension.swift */,
 				FA5755B427A6B8BE00734ACC /* LocalNotificationManager.swift */,
+				FA9044C927A700A700CA845B /* Constants.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -489,6 +492,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FA5755B527A6B8BF00734ACC /* LocalNotificationManager.swift in Sources */,
+				FA9044CA27A700A700CA845B /* Constants.swift in Sources */,
 				FA5755A727A5E63900734ACC /* SettingsModel.swift in Sources */,
 				FAEDA2D527A5921400CA5F5E /* WeatherTableViewCell.swift in Sources */,
 				FAA35E0727A597E800C037A7 /* WeatherViewModel.swift in Sources */,

@@ -14,12 +14,6 @@ struct NotificationIdentifier {
 
 class LocalNotificationManager {
     
-    //    init() {
-    
-    //    }
-    //
-    
-    
     func scheduleLocalNotification(_ title: String, subTitle: String, body: String) {
         let notificationContent = UNMutableNotificationContent()
         
