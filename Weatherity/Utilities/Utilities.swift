@@ -28,3 +28,11 @@ enum AppStoryboard: String {
         return instance.instantiateViewController(withIdentifier: storyboardID) as! T
     }
 }
+
+
+extension Double {
+    /// self Must needs to be celsius
+    func toFahrenheit() -> Double {
+        return (self * 9/5) + 32
+    }
+}

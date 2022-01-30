@@ -1,9 +1,8 @@
 //
 //  HPapiRequestWrapper.swift
-//  Sculpt
+//  Weatherity
 //
-//  Created by Harshad Pipaliya on 28/12/19.
-//  Copyright © 2019 Mobio Solutions. All rights reserved.
+//  Created by Harsh on 29/01/2022.
 //
 
 import UIKit
@@ -38,14 +37,14 @@ class HPapiRequestWrapper: NSObject {
 
 
     //Post type methods
-    class func requestPOSTURL(_ strURL: String, _ method: HTTPMethod, _ dictParams: [String: String], _ dictHeaders: HTTPHeaders?, success: @escaping (JSON) -> Void, failure: @escaping (Error) -> Void) {
+    class func requestPOSTURL(_ strURL: String, _ method: HTTPMethod, _ dictParams: [String: String], _ dictHeaders: HTTPHeaders?, success: @escaping (Data?) -> Void, failure: @escaping (Error) -> Void) {
 
 //        debugPrint(strURL)
         
-        AF.request(strURL, method: method, parameters: dictParams, encoder: JSONParameterEncoder.default, headers: dictHeaders).responseJSON { response in
-            switch response.result {
+        AF.request(strURL, method: method, parameters: dictParams, encoder: JSONParameterEncoder.default, headers: dictHeaders).responseData { responseData in
+            switch responseData.result {
             case .success:
-                success(JSON(response.value!))
+                success(responseData.data)
                 break
                 
             case .failure(let error):

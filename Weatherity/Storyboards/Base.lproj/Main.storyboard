@@ -13,8 +13,14 @@
         <array key="NunitoSans-Black.ttf">
             <string>NunitoSans-Black</string>
         </array>
+        <array key="NunitoSans-Bold.ttf">
+            <string>NunitoSans-Bold</string>
+        </array>
         <array key="NunitoSans-Regular.ttf">
             <string>NunitoSans-Regular</string>
+        </array>
+        <array key="NunitoSans-SemiBold.ttf">
+            <string>NunitoSans-SemiBold</string>
         </array>
     </customFonts>
     <scenes>
@@ -56,7 +62,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="627.536231884058" y="99.776785714285708"/>
+            <point key="canvasLocation" x="642" y="100"/>
         </scene>
         <!--Settings Table View Controller-->
         <scene sceneID="OXA-5D-4ds">
@@ -68,15 +74,15 @@
                         <sections>
                             <tableViewSection id="vS6-5i-hoq">
                                 <cells>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" id="euu-10-vIf">
-                                        <rect key="frame" x="20" y="18" width="374" height="56.5"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" rowHeight="56" id="euu-10-vIf">
+                                        <rect key="frame" x="20" y="18" width="374" height="56"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="euu-10-vIf" id="rAx-jx-JcS">
-                                            <rect key="frame" x="0.0" y="0.0" width="374" height="56.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="374" height="56"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Settings" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xcj-L5-gSQ">
-                                                    <rect key="frame" x="64" y="16" width="294" height="24.5"/>
+                                                    <rect key="frame" x="64" y="16" width="294" height="24"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="24" id="0xv-4e-PiE"/>
                                                     </constraints>
@@ -85,21 +91,16 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zGX-DJ-4Sc">
-                                                    <rect key="frame" x="16" y="12.5" width="32" height="32"/>
+                                                    <rect key="frame" x="16" y="12" width="32" height="32"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="32" id="N6V-LR-8bg"/>
                                                         <constraint firstAttribute="width" secondItem="zGX-DJ-4Sc" secondAttribute="height" multiplier="1:1" id="i99-d6-97H"/>
                                                     </constraints>
                                                     <state key="normal" title="Button"/>
                                                     <buttonConfiguration key="configuration" style="plain" title=" ">
-                                                        <imageReference key="image" image="clear.fill" catalog="system" symbolScale="large" renderingMode="hierarchical">
-                                                            <hierarchicalColors>
-                                                                <color systemColor="labelColor"/>
-                                                                <color systemColor="secondaryLabelColor"/>
-                                                                <color systemColor="tertiaryLabelColor"/>
-                                                            </hierarchicalColors>
-                                                        </imageReference>
+                                                        <imageReference key="image" image="clear.fill" catalog="system" symbolScale="default"/>
                                                         <fontDescription key="titleFontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="1"/>
+                                                        <color key="baseForegroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     </buttonConfiguration>
                                                     <connections>
                                                         <action selector="btnCloseAction:" destination="19v-SH-wnV" eventType="touchUpInside" id="M43-o7-a33"/>
@@ -121,7 +122,7 @@
                             <tableViewSection id="HES-B0-PZN">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" id="oeb-E5-ESw">
-                                        <rect key="frame" x="20" y="110.5" width="374" height="77.5"/>
+                                        <rect key="frame" x="20" y="110" width="374" height="77.5"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="oeb-E5-ESw" id="JRq-oc-EqX">
                                             <rect key="frame" x="0.0" y="0.0" width="374" height="77.5"/>
@@ -171,7 +172,297 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VQH-uS-S80" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1348" y="100"/>
+            <point key="canvasLocation" x="1371" y="100"/>
+        </scene>
+        <!--Weather Detail-->
+        <scene sceneID="bj5-s6-c3U">
+            <objects>
+                <viewController storyboardIdentifier="WeatherDetailViewController" title="Weather Detail" id="b2x-Ne-4MM" customClass="WeatherDetailViewController" customModule="Weatherity" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="BNf-di-EuF">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="b6l-W9-GJA">
+                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="umS-lD-KiQ">
+                                        <rect key="frame" x="16" y="16" width="382" height="602.5"/>
+                                        <subviews>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="6g4-4W-kMm">
+                                                <rect key="frame" x="0.0" y="0.0" width="382" height="48"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="TimeZone" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jbe-gm-rkz">
+                                                        <rect key="frame" x="0.0" y="0.0" width="382" height="24"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="24" id="UaU-8i-KWm"/>
+                                                        </constraints>
+                                                        <fontDescription key="fontDescription" name="NunitoSans-Bold" family="Nunito Sans" pointSize="20"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7AX-mc-aRW">
+                                                        <rect key="frame" x="0.0" y="24" width="382" height="24"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="24" id="UhK-sQ-cb3"/>
+                                                        </constraints>
+                                                        <fontDescription key="fontDescription" name="NunitoSans-SemiBold" family="Nunito Sans" pointSize="12"/>
+                                                        <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                            </stackView>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5Vo-AI-lTD">
+                                                <rect key="frame" x="0.0" y="64" width="382" height="99.5"/>
+                                                <subviews>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="0So-yA-p63">
+                                                        <rect key="frame" x="32" y="0.0" width="318" height="99.5"/>
+                                                        <subviews>
+                                                            <stackView opaque="NO" contentMode="scaleToFill" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="mZR-Yk-Zff">
+                                                                <rect key="frame" x="0.0" y="0.0" width="318" height="64"/>
+                                                                <subviews>
+                                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="50n" translatesAutoresizingMaskIntoConstraints="NO" id="nPQ-iI-Muf">
+                                                                        <rect key="frame" x="0.0" y="0.0" width="64" height="64"/>
+                                                                        <color key="backgroundColor" white="0.67000000000000004" alpha="0.5" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                        <constraints>
+                                                                            <constraint firstAttribute="width" constant="64" id="xYY-lp-lPo"/>
+                                                                        </constraints>
+                                                                    </imageView>
+                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Weather" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ymw-ug-Pp5">
+                                                                        <rect key="frame" x="80" y="0.0" width="238" height="64"/>
+                                                                        <fontDescription key="fontDescription" name="NunitoSans-Bold" family="Nunito Sans" pointSize="20"/>
+                                                                        <nil key="textColor"/>
+                                                                        <nil key="highlightedColor"/>
+                                                                    </label>
+                                                                </subviews>
+                                                                <constraints>
+                                                                    <constraint firstItem="nPQ-iI-Muf" firstAttribute="width" secondItem="nPQ-iI-Muf" secondAttribute="height" multiplier="1:1" id="sBm-iw-1sb"/>
+                                                                </constraints>
+                                                            </stackView>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Weather Desc" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ViL-Bg-syx">
+                                                                <rect key="frame" x="0.0" y="72" width="318" height="27.5"/>
+                                                                <fontDescription key="fontDescription" name="NunitoSans-Regular" family="Nunito Sans" pointSize="16"/>
+                                                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                        </subviews>
+                                                    </stackView>
+                                                </subviews>
+                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="bottom" secondItem="0So-yA-p63" secondAttribute="bottom" id="81o-EN-kG2"/>
+                                                    <constraint firstAttribute="trailing" secondItem="0So-yA-p63" secondAttribute="trailing" constant="32" id="UVu-wE-P0t"/>
+                                                    <constraint firstItem="0So-yA-p63" firstAttribute="leading" secondItem="5Vo-AI-lTD" secondAttribute="leading" constant="32" id="bhT-Jo-OAd"/>
+                                                    <constraint firstItem="0So-yA-p63" firstAttribute="top" secondItem="5Vo-AI-lTD" secondAttribute="top" id="j0W-41-k2K"/>
+                                                </constraints>
+                                            </view>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zM1-ha-MGL">
+                                                <rect key="frame" x="0.0" y="179.5" width="382" height="183"/>
+                                                <subviews>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="yIJ-bU-bV7">
+                                                        <rect key="frame" x="32" y="16" width="318" height="151"/>
+                                                        <subviews>
+                                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="yFY-ol-ZJ4">
+                                                                <rect key="frame" x="0.0" y="23" width="257" height="105"/>
+                                                                <subviews>
+                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Day" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uhq-Cc-iiX">
+                                                                        <rect key="frame" x="0.0" y="0.0" width="257" height="44"/>
+                                                                        <fontDescription key="fontDescription" name="NunitoSans-Regular" family="Nunito Sans" pointSize="32"/>
+                                                                        <nil key="textColor"/>
+                                                                        <nil key="highlightedColor"/>
+                                                                    </label>
+                                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gcP-8b-uZ4">
+                                                                        <rect key="frame" x="0.0" y="52" width="257" height="1"/>
+                                                                        <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                        <constraints>
+                                                                            <constraint firstAttribute="height" constant="1" id="I7b-Gk-Rbf"/>
+                                                                        </constraints>
+                                                                    </view>
+                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Night" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7W4-b7-0el">
+                                                                        <rect key="frame" x="0.0" y="61" width="257" height="44"/>
+                                                                        <fontDescription key="fontDescription" name="NunitoSans-Regular" family="Nunito Sans" pointSize="32"/>
+                                                                        <nil key="textColor"/>
+                                                                        <nil key="highlightedColor"/>
+                                                                    </label>
+                                                                </subviews>
+                                                            </stackView>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Unit" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wzb-sX-FId">
+                                                                <rect key="frame" x="273" y="62" width="45" height="27.5"/>
+                                                                <fontDescription key="fontDescription" name="NunitoSans-Regular" family="Nunito Sans" pointSize="20"/>
+                                                                <nil key="textColor"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                        </subviews>
+                                                    </stackView>
+                                                </subviews>
+                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                <constraints>
+                                                    <constraint firstItem="yIJ-bU-bV7" firstAttribute="leading" secondItem="zM1-ha-MGL" secondAttribute="leading" constant="32" id="7lc-Gz-1m9"/>
+                                                    <constraint firstAttribute="trailing" secondItem="yIJ-bU-bV7" secondAttribute="trailing" constant="32" id="AsJ-11-lox"/>
+                                                    <constraint firstAttribute="bottom" secondItem="yIJ-bU-bV7" secondAttribute="bottom" constant="16" id="a5U-af-ThN"/>
+                                                    <constraint firstItem="yIJ-bU-bV7" firstAttribute="top" secondItem="zM1-ha-MGL" secondAttribute="top" constant="16" id="xgS-oB-SNy"/>
+                                                </constraints>
+                                            </view>
+                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="rVf-li-qcd">
+                                                <rect key="frame" x="0.0" y="378.5" width="382" height="24"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sunrise" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vka-nv-CBY">
+                                                        <rect key="frame" x="0.0" y="0.0" width="187" height="24"/>
+                                                        <fontDescription key="fontDescription" name="NunitoSans-Regular" family="Nunito Sans" pointSize="16"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sunrise" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="67G-va-22C">
+                                                        <rect key="frame" x="195" y="0.0" width="187" height="24"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="24" id="lsy-Sy-KxK"/>
+                                                        </constraints>
+                                                        <fontDescription key="fontDescription" name="NunitoSans-Bold" family="Nunito Sans" pointSize="16"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                            </stackView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="FT4-If-8C8">
+                                                <rect key="frame" x="0.0" y="418.5" width="382" height="24"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sunset" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Med-LA-MeF">
+                                                        <rect key="frame" x="0.0" y="0.0" width="187" height="24"/>
+                                                        <fontDescription key="fontDescription" name="NunitoSans-Regular" family="Nunito Sans" pointSize="16"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sunset" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="57h-3X-dTp">
+                                                        <rect key="frame" x="195" y="0.0" width="187" height="24"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="24" id="Hjc-NS-ZfR"/>
+                                                        </constraints>
+                                                        <fontDescription key="fontDescription" name="NunitoSans-Bold" family="Nunito Sans" pointSize="16"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                            </stackView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="IRF-wn-bIq">
+                                                <rect key="frame" x="0.0" y="458.5" width="382" height="24"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Moonrise" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="n8G-4Y-fbl">
+                                                        <rect key="frame" x="0.0" y="0.0" width="187" height="24"/>
+                                                        <fontDescription key="fontDescription" name="NunitoSans-Regular" family="Nunito Sans" pointSize="16"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Moonrise" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YbX-3J-oyk">
+                                                        <rect key="frame" x="195" y="0.0" width="187" height="24"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="24" id="1A9-pr-G0g"/>
+                                                        </constraints>
+                                                        <fontDescription key="fontDescription" name="NunitoSans-Bold" family="Nunito Sans" pointSize="16"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                            </stackView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="0De-qo-ZQD">
+                                                <rect key="frame" x="0.0" y="498.5" width="382" height="24"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Moonset" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bH4-Gr-cZg">
+                                                        <rect key="frame" x="0.0" y="0.0" width="187" height="24"/>
+                                                        <fontDescription key="fontDescription" name="NunitoSans-Regular" family="Nunito Sans" pointSize="16"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Moonset" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EwU-k3-WfE">
+                                                        <rect key="frame" x="195" y="0.0" width="187" height="24"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="24" id="4AQ-Es-yPm"/>
+                                                        </constraints>
+                                                        <fontDescription key="fontDescription" name="NunitoSans-Bold" family="Nunito Sans" pointSize="16"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                            </stackView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="pPX-0v-Si0">
+                                                <rect key="frame" x="0.0" y="538.5" width="382" height="24"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Humidity" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KT3-Tf-4wE">
+                                                        <rect key="frame" x="0.0" y="0.0" width="187" height="24"/>
+                                                        <fontDescription key="fontDescription" name="NunitoSans-Regular" family="Nunito Sans" pointSize="16"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sunrise" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WbU-5g-S21">
+                                                        <rect key="frame" x="195" y="0.0" width="187" height="24"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="24" id="8VI-vA-U06"/>
+                                                        </constraints>
+                                                        <fontDescription key="fontDescription" name="NunitoSans-Bold" family="Nunito Sans" pointSize="16"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                            </stackView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="oe7-Ci-Bl0">
+                                                <rect key="frame" x="0.0" y="578.5" width="382" height="24"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Wind Speed" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IKY-68-qM3">
+                                                        <rect key="frame" x="0.0" y="0.0" width="187" height="24"/>
+                                                        <fontDescription key="fontDescription" name="NunitoSans-Regular" family="Nunito Sans" pointSize="16"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sunrise" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YLO-mK-iRD">
+                                                        <rect key="frame" x="195" y="0.0" width="187" height="24"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="24" id="y7I-O4-utO"/>
+                                                        </constraints>
+                                                        <fontDescription key="fontDescription" name="NunitoSans-Bold" family="Nunito Sans" pointSize="16"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                            </stackView>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="umS-lD-KiQ" secondAttribute="bottom" constant="16" id="Al8-Mg-kF8"/>
+                                    <constraint firstItem="umS-lD-KiQ" firstAttribute="top" secondItem="b6l-W9-GJA" secondAttribute="top" constant="16" id="JTd-Qc-zUC"/>
+                                    <constraint firstAttribute="trailing" secondItem="umS-lD-KiQ" secondAttribute="trailing" constant="16" id="Pag-pK-U2a"/>
+                                    <constraint firstItem="umS-lD-KiQ" firstAttribute="leading" secondItem="b6l-W9-GJA" secondAttribute="leading" constant="16" id="l5z-4O-gZv"/>
+                                    <constraint firstItem="umS-lD-KiQ" firstAttribute="centerX" secondItem="b6l-W9-GJA" secondAttribute="centerX" id="u1A-bJ-ibi"/>
+                                </constraints>
+                            </scrollView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="pEZ-hf-V2a"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="b6l-W9-GJA" firstAttribute="leading" secondItem="pEZ-hf-V2a" secondAttribute="leading" id="Tsw-0H-thP"/>
+                            <constraint firstItem="pEZ-hf-V2a" firstAttribute="trailing" secondItem="b6l-W9-GJA" secondAttribute="trailing" id="bNR-FM-pLn"/>
+                            <constraint firstItem="pEZ-hf-V2a" firstAttribute="bottom" secondItem="b6l-W9-GJA" secondAttribute="bottom" id="qis-fv-nUs"/>
+                            <constraint firstItem="b6l-W9-GJA" firstAttribute="top" secondItem="pEZ-hf-V2a" secondAttribute="top" id="uyz-oE-soz"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="imgWeatherIcon" destination="nPQ-iI-Muf" id="gVC-5n-sjd"/>
+                        <outlet property="lblDate" destination="7AX-mc-aRW" id="t5o-lK-msq"/>
+                        <outlet property="lblHumidity" destination="WbU-5g-S21" id="F5E-df-kje"/>
+                        <outlet property="lblMoonrise" destination="YbX-3J-oyk" id="SKg-GQ-jGo"/>
+                        <outlet property="lblMoonset" destination="EwU-k3-WfE" id="FRD-3s-bb7"/>
+                        <outlet property="lblSunrise" destination="67G-va-22C" id="bdM-K4-0ag"/>
+                        <outlet property="lblSunset" destination="57h-3X-dTp" id="zmP-wc-Isf"/>
+                        <outlet property="lblTempDay" destination="uhq-Cc-iiX" id="p83-2x-6HN"/>
+                        <outlet property="lblTempNight" destination="7W4-b7-0el" id="EY1-19-fT4"/>
+                        <outlet property="lblTempUnit" destination="Wzb-sX-FId" id="Kkh-kM-vZg"/>
+                        <outlet property="lblTimeZone" destination="Jbe-gm-rkz" id="I2l-mo-5a7"/>
+                        <outlet property="lblWeather" destination="Ymw-ug-Pp5" id="fWX-D8-VB9"/>
+                        <outlet property="lblWeatherDesc" destination="ViL-Bg-syx" id="q2Z-XL-Neh"/>
+                        <outlet property="lblWindSpeed" destination="YLO-mK-iRD" id="2xE-TC-nvJ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="SKS-aG-p3o" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2099" y="100"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="FSP-tF-n8O">
@@ -199,16 +490,11 @@
         </scene>
     </scenes>
     <resources>
+        <image name="50n" width="50" height="50"/>
         <image name="circle.grid.hex.fill" catalog="system" width="128" height="112"/>
         <image name="clear.fill" catalog="system" width="128" height="114"/>
-        <systemColor name="labelColor">
-            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
-        <systemColor name="secondaryLabelColor">
-            <color red="0.23529411764705882" green="0.23529411764705882" blue="0.2627450980392157" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
-        <systemColor name="tertiaryLabelColor">
-            <color red="0.23529411764705882" green="0.23529411764705882" blue="0.2627450980392157" alpha="0.29999999999999999" colorSpace="custom" customColorSpace="sRGB"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
     </resources>
 </document>

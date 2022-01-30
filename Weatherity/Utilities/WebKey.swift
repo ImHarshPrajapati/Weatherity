@@ -1,9 +1,8 @@
 //
 //  WebKey.swift
-//  
+//  Weatherity
 //
-//  Created by Harshad Pipaliya on 28/12/19.
-//  Copyright © 2019 Mobio Solutions. All rights reserved.
+//  Created by Harsh on 29/01/2022.
 //
 
 import UIKit

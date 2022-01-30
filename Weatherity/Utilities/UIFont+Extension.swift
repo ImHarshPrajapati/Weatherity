@@ -1,9 +1,8 @@
 //
 //  UIFontExtension.swift
-//  Farmd
+//  Weatherity
 //
-//  Created by Tapan Patel on 10/9/18.
-//  Copyright © 2018 Farmd Apps. All rights reserved.
+//  Created by Harsh on 29/01/2022.
 //
 
 import UIKit

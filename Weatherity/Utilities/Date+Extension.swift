@@ -1,9 +1,8 @@
 //
 //  Date+Extension.swift
-//  Farmd
+//  Weatherity
 //
-//  Created by Harsh Pipaliya on 25/01/19.
-//  Copyright © 2019 Farmd Apps. All rights reserved.
+//  Created by Harsh on 29/01/2022.
 //
 
 import Foundation

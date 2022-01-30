@@ -1,9 +1,8 @@
 //
 //  UITableView+Extension.swift
-//  BaseProject
+//  Weatherity
 //
-//  Created by AshvinGudaliya on 12/02/18.
-//  Copyright © 2018 AshvinGudaliya. All rights reserved.
+//  Created by Harsh on 29/01/2022.
 //
 
 import UIKit

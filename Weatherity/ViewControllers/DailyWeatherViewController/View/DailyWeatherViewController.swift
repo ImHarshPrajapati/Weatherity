@@ -45,13 +45,8 @@ class DailyWeatherViewController: UIViewController {
                 self.tableViewWeatherList.reloadData()
 //                self.tableViewMyOrder.setEmptyMessage(msgDataNotFound, self.myOrdersViewModel.arrMyOrders?.count ?? 0)
             case .noInternet:
-            //                self.loadNoInternetNoData {
-            //                    self.myOrderListAPICall()
-            //                }
                 break
-
             default:
-//                self.popupAlert("", message, [ButtonTitles.Ok], [nil])
                 self.tableViewWeatherList.reloadData()
                 self.tableViewWeatherList.setEmptyMessage(message, self.weatherViewModel.arrDailyWeather?.count ?? 0)
                 break;
@@ -71,6 +66,13 @@ extension DailyWeatherViewController: UITableViewDataSource, UITableViewDelegate
         let cell = tableView.dequeueReusableCell(withClassIdentifier: WeatherTableViewCell.self, for: indexPath)
         cell.initWeatherData(weatherViewModel.arrDailyWeather![indexPath.row])
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let weatherDetailVC = WeatherDetailViewController.instantiate(fromAppStoryboard: .Main)
+        weatherDetailVC.dailyWeather = weatherViewModel.arrDailyWeather![indexPath.row]
+        weatherDetailVC.weatherViewModel = weatherViewModel
+        self.navigationController?.pushViewController(weatherDetailVC, animated: true)
     }
 }
 

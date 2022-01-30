@@ -1,9 +1,8 @@
 //
 //  UIViewController+Extension.swift
+//  Weatherity
 //
-//
-//  Created by Harsh Prajapati on 22/11/18.
-//  Copyright © 2018 Farmd Apps. All rights reserved.
+//  Created by Harsh on 29/01/2022.
 //
 
 import UIKit
