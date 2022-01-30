@@ -10,10 +10,19 @@ import UIKit
 class WeatherTableViewCell: UITableViewCell {
 
     
+    @IBOutlet weak var viewWeather: UIView! {
+        didSet {
+            guard let view = self.viewWeather else { return }
+            view.cornerRadius = 8
+            view.setDropShadow(color: UIColor.lightGray, opacity: 0.40, offSet: CGSize(width: 0, height: 4), radius: 6)
+        }
+    }
     @IBOutlet weak var imgWeatherIcon: UIImageView! {
         didSet {
             guard let image = self.imgWeatherIcon else { return }
             image.cornerRadius = 4
+            image.backgroundColor = UIColor.white
+            image.setDropShadow(color: UIColor.lightGray, opacity: 0.40, offSet: CGSize(width: 0, height: 4), radius: 6)
         }
     }
     @IBOutlet weak var lblDate: UILabel!
@@ -34,7 +43,7 @@ class WeatherTableViewCell: UITableViewCell {
     // MARK: Other Methods
     func initWeatherData(_ dailWeather: DailyWeather) {
         self.selectionStyle = .none
-        self.lblDate.text = (dailWeather.dt ?? 0).toDate().toString(format: "dd-MMM, yyyy")
+        self.lblDate.text = (dailWeather.dt ?? 0).toDate().toString(format: "EEE dd-MMM, yyyy")
         
         self.lblTemperature.text = StringBase.kTempature
         
@@ -42,7 +51,7 @@ class WeatherTableViewCell: UITableViewCell {
         self.lblTempNight.text = StringBase.kNight + ": " + weatherViewModel.getCalculatedTemperature(dailWeather.temp?.night ?? 0) + weatherViewModel.getTempUnit()
         
         if let weathers = dailWeather.weather, let weather = weathers.first {
-            self.lblDescription.text = weather.weatherDescription ?? "N/A"
+            self.lblDescription.text = (weather.main ?? "N/A") + " - " + (weather.weatherDescription ?? "N/A")
             imgWeatherIcon.image = UIImage(named: weather.icon ?? "50d")
         }
         else {
