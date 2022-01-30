@@ -25,6 +25,10 @@ class DailyWeatherViewController: UIViewController {
     // MARK: ViewController LifeCycle
     override func viewDidLoad() {
         super.viewDidLoad()
+        weatherViewModel.timer.invalidate()
+        weatherViewModel.timer = Timer.scheduledTimer(withTimeInterval: 4, repeats: true) { [weak self] _ in
+            self?.dailyWeatherAPICall()
+        }
         dailyWeatherAPICall()
     }
     

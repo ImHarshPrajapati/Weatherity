@@ -13,11 +13,11 @@ class WeatherViewModel {
     var weatherModel: WeatherModel!
     var arrDailyWeather: [DailyWeather]?
     
+    var timer = Timer()
+    
     typealias dailyWeatherCallBack = (_ success: NetworkManager.statusCode, _ message: String) -> Void
     
     func getDailyWeatherAPI(response: @escaping dailyWeatherCallBack) {
-        
-        
         ///TODO: Added JSON in bundle to avoid API call while testing (As open API calls are limited 😋)
         if let path = Bundle.main.path(forResource: "weather", ofType: "json") {
             do {
