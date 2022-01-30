@@ -7,8 +7,6 @@
 
 import Foundation
 
-//   let weatherData = try? newJSONDecoder().decode(WeatherData.self, from: jsonData)
-
 import Foundation
 
 // MARK: - WeatherData

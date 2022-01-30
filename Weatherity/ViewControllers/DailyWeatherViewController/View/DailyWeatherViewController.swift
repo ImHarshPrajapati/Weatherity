@@ -6,11 +6,10 @@
 //
 
 import UIKit
-
-
+import UserNotifications
 
 class DailyWeatherViewController: UIViewController {
-
+    
     //MARK: - Properties
     @IBOutlet weak var tableViewWeatherList: UITableView! {
         didSet {
@@ -21,12 +20,21 @@ class DailyWeatherViewController: UIViewController {
         }
     }
     var weatherViewModel = WeatherViewModel()
+    var localNotificationManager = LocalNotificationManager()
     
     // MARK: ViewController LifeCycle
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.localNotificationManager.requestAuthorization { success in
+            if success {
+                UNUserNotificationCenter.current().delegate = self
+                self.localNotificationManager.scheduleLocalNotification("Weather update", subTitle: "", body: "There will be clear sky today")
+            }
+        }
+        
         weatherViewModel.timer.invalidate()
-        weatherViewModel.timer = Timer.scheduledTimer(withTimeInterval: 4, repeats: true) { [weak self] _ in
+        weatherViewModel.timer = Timer.scheduledTimer(withTimeInterval: 60, repeats: true) { [weak self] _ in
             self?.dailyWeatherAPICall()
         }
         dailyWeatherAPICall()
@@ -47,7 +55,7 @@ class DailyWeatherViewController: UIViewController {
             switch (status) {
             case .success:
                 self.tableViewWeatherList.reloadData()
-//                self.tableViewMyOrder.setEmptyMessage(msgDataNotFound, self.myOrdersViewModel.arrMyOrders?.count ?? 0)
+                //                self.tableViewMyOrder.setEmptyMessage(msgDataNotFound, self.myOrdersViewModel.arrMyOrders?.count ?? 0)
             case .noInternet:
                 break
             default:
@@ -84,5 +92,13 @@ extension DailyWeatherViewController: UITableViewDataSource, UITableViewDelegate
 extension DailyWeatherViewController: SettingsTableViewControllerDelegate {
     func refreshTempUnit() {
         self.tableViewWeatherList.reloadData()
+    }
+}
+
+
+//MARK: - UNUserNotificationCenter Delegates
+extension DailyWeatherViewController: UNUserNotificationCenterDelegate {
+    func userNotificationCenter(_ center: UNUserNotificationCenter, willPresent notification: UNNotification, withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
+        completionHandler([.banner])
     }
 }

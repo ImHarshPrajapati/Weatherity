@@ -10,7 +10,13 @@ import UIKit
 
 class WebServices {
     
-    static let DomainName = "https://api.openweathermap.org/data/2.5/"
+    #if DEBUGSTAGING || STAGING
+        static let DomainName = "https://api.openweathermap.org/data/2.5/"
+    #elseif DEBUGDEVELOPMENT || DEVELOPMENT
+        static let DomainName = "https://api.openweathermap.org/data/2.5/"
+    #else
+        static let DomainName = "https://api.openweathermap.org/data/2.5/"
+    #endif
     
     enum URLs: String {
         case onecall = "onecall?"
