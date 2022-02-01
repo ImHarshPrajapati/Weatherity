@@ -7,6 +7,7 @@
 
 import UIKit
 import UserNotifications
+import RealmSwift
 
 class DailyWeatherViewController: UIViewController {
     
@@ -83,7 +84,7 @@ extension DailyWeatherViewController: UITableViewDataSource, UITableViewDelegate
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let weatherDetailVC = WeatherDetailViewController.instantiate(fromAppStoryboard: .Main)
         weatherDetailVC.dailyWeather = weatherViewModel.arrDailyWeather![indexPath.row]
-        weatherDetailVC.weatherViewModel = weatherViewModel
+        weatherDetailVC.weatherModel = weatherViewModel.weatherModel
         self.navigationController?.pushViewController(weatherDetailVC, animated: true)
     }
 }

@@ -43,16 +43,16 @@ class WeatherTableViewCell: UITableViewCell {
     // MARK: Other Methods
     func initWeatherData(_ dailWeather: DailyWeather) {
         self.selectionStyle = .none
-        self.lblDate.text = (dailWeather.dt ?? 0).toDate().toString(format: "EEE dd-MMM, yyyy")
+        self.lblDate.text = (dailWeather.dt).toDate().toString(format: "EEE dd-MMM, yyyy")
         
         self.lblTemperature.text = StringBase.kTempature
         
         self.lblTempDay.text = StringBase.kDay + ": " + weatherViewModel.getCalculatedTemperature(dailWeather.temp?.day ?? 0) + weatherViewModel.getTempUnit()
         self.lblTempNight.text = StringBase.kNight + ": " + weatherViewModel.getCalculatedTemperature(dailWeather.temp?.night ?? 0) + weatherViewModel.getTempUnit()
         
-        if let weathers = dailWeather.weather, let weather = weathers.first {
-            self.lblDescription.text = (weather.main ?? "N/A") + " - " + (weather.weatherDescription ?? "N/A")
-            imgWeatherIcon.image = UIImage(named: weather.icon ?? "50d")
+        if let weather = dailWeather.weather.first {
+            self.lblDescription.text = (weather.main) + " - " + (weather.weatherDescription)
+            imgWeatherIcon.image = UIImage(named: weather.icon)
         }
         else {
             imgWeatherIcon.image = UIImage(named: "50d")

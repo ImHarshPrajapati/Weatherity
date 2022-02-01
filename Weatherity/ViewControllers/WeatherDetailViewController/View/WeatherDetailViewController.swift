@@ -17,8 +17,6 @@ class WeatherDetailViewController: UIViewController {
         didSet {
             guard let image = self.imgWeatherIcon else { return }
             image.cornerRadius = 4
-//            image.backgroundColor = UIColor.white
-//            image.setDropShadow(color: UIColor.lightGray, opacity: 0.40, offSet: CGSize(width: 0, height: 4), radius: 6)
         }
     }
     
@@ -37,6 +35,8 @@ class WeatherDetailViewController: UIViewController {
     @IBOutlet weak var lblWindSpeed: UILabel!
     
     var dailyWeather: DailyWeather!
+    var weatherModel: WeatherModel!
+    
     var weatherViewModel = WeatherViewModel()
     
     // MARK: ViewController LifeCycle
@@ -48,18 +48,18 @@ class WeatherDetailViewController: UIViewController {
     // MARK: Other Methods
     func initAndSetupView() {
         
-        self.lblTimeZone.text = weatherViewModel.weatherModel.timezone ?? "N/A"
-        self.lblDate.text = (dailyWeather.dt ?? 0).toDate().toString(format: "EEE dd-MMM, yyyy")
+        self.lblTimeZone.text = weatherModel.timezone
+        self.lblDate.text = (dailyWeather.dt).toDate().toString(format: "EEE dd-MMM, yyyy")
         
         self.lblTempDay.text = StringBase.kDay + ": " + weatherViewModel.getCalculatedTemperature(dailyWeather.temp?.day ?? 0)
         self.lblTempNight.text = StringBase.kNight + ": " + weatherViewModel.getCalculatedTemperature(dailyWeather.temp?.night ?? 0)
         
         self.lblTempUnit.text = weatherViewModel.getTempUnit()
         
-        if let weathers = dailyWeather.weather, let weather = weathers.first {
-            self.lblWeather.text = weather.main ?? "N/A"
-            self.imgWeatherIcon.image = UIImage(named: weather.icon ?? "50d")
-            self.lblWeatherDesc.text = weather.weatherDescription ?? "N/A"
+        if let weather = dailyWeather.weather.first {
+            self.lblWeather.text = weather.main
+            self.imgWeatherIcon.image = UIImage(named: weather.icon)
+            self.lblWeatherDesc.text = weather.weatherDescription
         }
         else {
             self.imgWeatherIcon.image = UIImage(named: "50d")
@@ -67,14 +67,14 @@ class WeatherDetailViewController: UIViewController {
             self.lblWeatherDesc.text = "N/A"
         }
         
-        self.lblSunrise.text = (dailyWeather.sunrise ?? 0).toDate().toString(format: "EEE, HH:mm")
-        self.lblSunset.text = (dailyWeather.sunset ?? 0).toDate().toString(format: "EEE, HH:mm")
+        self.lblSunrise.text = (dailyWeather.sunrise).toDate().toString(format: "EEE, HH:mm")
+        self.lblSunset.text = (dailyWeather.sunset).toDate().toString(format: "EEE, HH:mm")
         
-        self.lblMoonrise.text = (dailyWeather.moonrise ?? 0).toDate().toString(format: "EEE, HH:mm")
-        self.lblMoonset.text = (dailyWeather.moonset ?? 0).toDate().toString(format: "EEE, HH:mm")
+        self.lblMoonrise.text = (dailyWeather.moonrise).toDate().toString(format: "EEE, HH:mm")
+        self.lblMoonset.text = (dailyWeather.moonset).toDate().toString(format: "EEE, HH:mm")
         
-        self.lblHumidity.text = "\(dailyWeather.humidity ?? 0)%"
-        self.lblWindSpeed.text = "\(dailyWeather.windSpeed ?? 0)m/s"
+        self.lblHumidity.text = "\(dailyWeather.humidity)%"
+        self.lblWindSpeed.text = "\(dailyWeather.windSpeed)m/s"
     }
 }
 

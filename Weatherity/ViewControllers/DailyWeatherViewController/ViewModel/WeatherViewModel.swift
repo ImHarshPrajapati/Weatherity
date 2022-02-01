@@ -6,12 +6,15 @@
 //
 
 import Foundation
+import RealmSwift
 
 
 class WeatherViewModel {
     
     var weatherModel: WeatherModel!
-    var arrDailyWeather: [DailyWeather]?
+    var arrDailyWeather: List<DailyWeather>?
+    
+    private let realm = try! Realm()
     
     var timer = Timer()
     
@@ -23,12 +26,20 @@ class WeatherViewModel {
 //        if let path = Bundle.main.path(forResource: "weather", ofType: "json") {
 //            do {
 //                let data = try Data(contentsOf: URL(fileURLWithPath: path), options: .mappedIfSafe)
-//                self.weatherModel = try JSONDecoder().decode(WeatherModel.self, from: data)
-//                self.arrDailyWeather = self.weatherModel.dailyWeathers ?? []
+//
+//                guard let weatherDataModel = try? JSONDecoder().decode(WeatherModel.self, from: data) else { return }
+//                try self.realm.write {
+//                    self.realm.add(weatherDataModel, update: .modified)
+//                }
+//
+//                if let weatherDataModel = realm.objects(WeatherModel.self).first {
+//                    self.weatherModel = weatherDataModel
+//                    self.arrDailyWeather = self.weatherModel.dailyWeathers
+//                }
 //                response(NetworkManager.statusCode.success, "")
 //                return
-//              } catch {
-//
+//              } catch let error {
+//                  print(error.localizedDescription)
 //              }
 //        }
 
@@ -39,18 +50,22 @@ class WeatherViewModel {
         strURL += "&units=metric"
         strURL += "&appid=" + Constants.openWeatherMapAPIKey
 
-        HPapiRequestWrapper.requestGETURL(strURL, dictHeader: nil, success: { responceData in
+        HPapiRequestWrapper.requestGETURL(strURL, dictHeader: nil, success: { [self] responceData in
 
             if let data = responceData {
                 do {
-                    self.weatherModel = try JSONDecoder().decode(WeatherModel.self, from: data)
-                    if let message = self.weatherModel.message {
-                        response(NetworkManager.statusCode.fail, message)
+                    guard let weatherDataModel = try? JSONDecoder().decode(WeatherModel.self, from: data) else {
+                        return
                     }
-                    else {
-                        self.arrDailyWeather = self.weatherModel.dailyWeathers ?? []
-                        response(NetworkManager.statusCode.success, "")
+                    try self.realm.write {
+                        self.realm.add(weatherDataModel, update: .modified)
                     }
+                    
+                    if let weatherDataModel = realm.objects(WeatherModel.self).first {
+                        self.weatherModel = weatherDataModel
+                        self.arrDailyWeather = self.weatherModel.dailyWeathers
+                    }
+                    response(NetworkManager.statusCode.success, "")
                     return
                 }
                 catch let error {
@@ -62,7 +77,14 @@ class WeatherViewModel {
                 response(NetworkManager.statusCode.fail, NetworkManager.somethingWentWrong)
             }
         }) { error in
-            response(NetworkManager.statusCode.fail, error.localizedDescription)
+            if let weatherDataModel = self.realm.objects(WeatherModel.self).first {
+                self.weatherModel = weatherDataModel
+                self.arrDailyWeather = self.weatherModel.dailyWeathers
+                response(NetworkManager.statusCode.success, "")
+            }
+            else {
+                response(NetworkManager.statusCode.fail, error.localizedDescription)
+            }
         }
     }
     
@@ -83,4 +105,51 @@ class WeatherViewModel {
             return String(format: "%.2f", celsius)
         }
     }
+    
+    
+//    ///RealM Database
+//    func write() {
+////        let table = Furniture.create(withName: "table")
+////        let chair = Furniture.create(withName: "chair")
+////        let store = Store.create(withName: "Test Store", furniture: [table, chair])
+//
+//        // Write to Realm
+//        print("Write to Realm")
+//        try! realm.write {
+////            realm.add(table)
+////            realm.add(chair)
+//            realm.add(store)
+//        }
+//    }
+//
+//    func read() {
+//        // Read from Realm
+//        print("Read from Realm")
+//        let data = realm.objects(Store.self)
+//        print(data)
+//    }
+//
+//    func update() {
+//        // Update data
+//        if let table = realm.objects(Furniture.self).first {
+//            try! realm.write {
+//                table.name = "New Table Name"
+//            }
+//
+//            print(realm.objects(Furniture.self).first ?? "")
+//        }
+//    }
+//
+//    func delete() {
+//        // Delete data
+//        print("Delete Data")
+//        if let tableToDelete = realm.objects(Furniture.self).first {
+//            try! realm.write {
+//                realm.delete(tableToDelete)
+//            }
+//
+//            print(realm.objects(Furniture.self).first ?? "")
+//            print(realm.objects(Store.self).first ?? "")
+//        }
+//    }
 }

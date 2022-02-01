@@ -18,6 +18,8 @@
 		FA5755AD27A656C300734ACC /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA5755AC27A656C300734ACC /* UIView+Extension.swift */; };
 		FA5755B227A6599E00734ACC /* WeatherDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA5755B127A6599E00734ACC /* WeatherDetailViewController.swift */; };
 		FA5755B527A6B8BF00734ACC /* LocalNotificationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA5755B427A6B8BE00734ACC /* LocalNotificationManager.swift */; };
+		FA5788D727A979AA00907D1D /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = FA5788D627A979AA00907D1D /* Realm */; };
+		FA5788D927A979AA00907D1D /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = FA5788D827A979AA00907D1D /* RealmSwift */; };
 		FA9044CA27A700A700CA845B /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA9044C927A700A700CA845B /* Constants.swift */; };
 		FAA35E0527A5964800C037A7 /* WeatherModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA35E0427A5964800C037A7 /* WeatherModel.swift */; };
 		FAA35E0727A597E800C037A7 /* WeatherViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA35E0627A597E800C037A7 /* WeatherViewModel.swift */; };
@@ -111,6 +113,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FA5788D927A979AA00907D1D /* RealmSwift in Frameworks */,
+				FA5788D727A979AA00907D1D /* Realm in Frameworks */,
 				FAA35E0D27A59D5900C037A7 /* Alamofire in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -364,6 +368,8 @@
 			name = Weatherity;
 			packageProductDependencies = (
 				FAA35E0C27A59D5900C037A7 /* Alamofire */,
+				FA5788D627A979AA00907D1D /* Realm */,
+				FA5788D827A979AA00907D1D /* RealmSwift */,
 			);
 			productName = Weatherity;
 			productReference = FAEDA27327A520C000CA5F5E /* Weatherity.app */;
@@ -439,6 +445,7 @@
 			mainGroup = FAEDA26A27A520C000CA5F5E;
 			packageReferences = (
 				FAA35E0B27A59D5900C037A7 /* XCRemoteSwiftPackageReference "Alamofire" */,
+				FA5788D527A979AA00907D1D /* XCRemoteSwiftPackageReference "realm-swift" */,
 			);
 			productRefGroup = FAEDA27427A520C000CA5F5E /* Products */;
 			projectDirPath = "";
@@ -1444,6 +1451,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		FA5788D527A979AA00907D1D /* XCRemoteSwiftPackageReference "realm-swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/realm/realm-swift.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.0;
+			};
+		};
 		FAA35E0B27A59D5900C037A7 /* XCRemoteSwiftPackageReference "Alamofire" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/Alamofire/Alamofire.git";
@@ -1455,6 +1470,16 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		FA5788D627A979AA00907D1D /* Realm */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = FA5788D527A979AA00907D1D /* XCRemoteSwiftPackageReference "realm-swift" */;
+			productName = Realm;
+		};
+		FA5788D827A979AA00907D1D /* RealmSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = FA5788D527A979AA00907D1D /* XCRemoteSwiftPackageReference "realm-swift" */;
+			productName = RealmSwift;
+		};
 		FAA35E0C27A59D5900C037A7 /* Alamofire */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = FAA35E0B27A59D5900C037A7 /* XCRemoteSwiftPackageReference "Alamofire" */;

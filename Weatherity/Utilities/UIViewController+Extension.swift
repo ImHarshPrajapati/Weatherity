@@ -29,18 +29,11 @@ extension UIViewController {
     }
     
     func openURLInSafari(_ strUrl: String) {
-        
         guard let url = URL(string: strUrl) else {
             return
         }
         if UIApplication.shared.canOpenURL(url) {
-            //If you want handle the completion block than
-            if #available(iOS 10.0, *) {
-                UIApplication.shared.open(url, options: [:], completionHandler: nil)
-            }
-            else {
-                UIApplication.shared.openURL(url)
-            }
+            UIApplication.shared.open(url, options: [:], completionHandler: nil)
         }
         else {
             print("URL can not be opened")
